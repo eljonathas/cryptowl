@@ -1,0 +1,66 @@
+<div class="container mx-auto mt-2 md:px-24">
+  <header class="flex flex-col mb-6">
+    <nav class="mb-3">
+      <ul class="list-none flex items-center">
+        <li class="flex items-center text-sm"><a href="/">Criptomoedas</a><i class="fe fe-arrow-right
+mx-3 text-white text-opacity-20"></i></li>
+        <li class="flex items-center text-sm text-white">Moedas</li>
+      </ul>
+    </nav>
+    <div>
+      <h1 class="font-semibold text-lg dark:text-white text-black">Veja as melhores opções de Criptomoedas por Capitalização</h1>
+      <p class="dark:text-white text-black opacity-60 font-normal text-sm">Clique em uma criptomoeda para verificar suas informações individualmente</p>
+    </div>
+  </header>
+  <main class="coins-table mb-8">
+    <table id="coins-table-content" class="mb-4">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Moeda</th>
+          <th>Preço</th>
+          <th>24h %</th>
+          <th>Cap. de Mercado</th>
+          <th>Volume em 24h</th>
+          <th>Fornecimento Circulante</th>
+        </tr>
+      </thead>
+      <tbody id="table-loading" class="visible">
+        <% 20.times do |ntime|%>
+            <tr class="loading">
+              <td><span class="block animate-pulse h-4 bg-white bg-opacity-20 rounded-md"></span></td>
+              <td><span class="block animate-pulse h-4 bg-white bg-opacity-20 rounded-md"></span></td>
+              <td><span class="block animate-pulse h-4 bg-white bg-opacity-20 rounded-md"></span></td>
+              <td><span class="block animate-pulse h-4 bg-white bg-opacity-20 rounded-md"></span></td>
+              <td><span class="block animate-pulse h-4 bg-white bg-opacity-20 rounded-md"></span></td>
+              <td><span class="block animate-pulse h-4 bg-white bg-opacity-20 rounded-md"></span></td>
+              <td><span class="block animate-pulse h-4 bg-white bg-opacity-20 rounded-md"></span></td>
+            </tr>
+        <% end %>
+      </tbody>
+      <tbody id="table-content" class="hidden"></tbody>
+    </table>
+    <div id="pagination_values" class="flex items-center justify-center">
+      <ul> 
+        <li page-offset="0" class="active">1</li>
+        <li page-offset="1">2</li>
+        <li page-offset="2">3</li>
+        <li page-offset="3">4</li>
+        <li page-offset="4">5</li>
+        <li page-offset="5">6</li>
+        <li page-offset="6">7</li>
+        <li page-offset="7">8</li>
+        <li page-offset="8">9</li>
+        <li page-offset="9">10</li>
+        <li page-offset="10">11</li>
+        <li page-offset="11">12</li>
+        <li page-offset="12">13</li>
+        <li page-offset="13">14</li>
+        <li page-offset="14">15</li>
+        <li page-offset="15">16</li>
+        <li page-offset="16">17</li>
+        <li page-offset="17">18</li>
+      </ul>
+    </div>
+  </main>
+</div>

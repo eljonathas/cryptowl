@@ -1,0 +1,119 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require feathericon
+ */
+
+:root {
+  --main-bg-color: #f9f9f9;
+  --navbar-text-color: rgba(0, 0, 0, 0.5);
+  --navbar-text-color-hover: black;
+  --image-filter: invert(1);
+  --main-illustration-filter: invert(1) grayscale(1);
+  --input-text-color: black;
+  --input-bg-color: rgba(0, 0, 0, 0.05);
+  --input-bg-color-hover: rgba(0, 0, 0, 0.1);
+  --input-bg-color-focus: rgba(0, 0, 0, 0.1);
+  --input-border-color: rgba(0, 0, 0, 0.2);
+  --main-button-bg-color: black;
+  --coins-table-bg-color: rgba(0, 0, 0, 0.8);
+}
+
+html.dark {
+  --main-bg-color: #26282b;
+  --navbar-text-color: rgba(255, 255, 255, 0.6);
+  --navbar-text-color-hover: white;
+  --image-filter: invert(0);
+  --main-illustration-filter: invert(0) grayscale(0);
+  --input-text-color: white;
+  --input-bg-color: #353941;
+  --input-bg-color-hover: #3c4049;
+  --input-bg-color-focus: #3c4049;
+  --input-border-color: #40454f;
+  --main-button-bg-color: #5f85db;
+  --coins-table-bg-color: rgba(0, 0, 0, 0.1);
+  --submenu-bg-color: #353941;
+  --submenu-scroll-thumb-color: #454a54;
+}
+
+.search-input {
+  display: flex;
+  align-items: center;
+  transition: all 0.2s;
+  color: var(--input-text-color);
+  width: 14rem;
+  background-color: var(--input-bg-color);
+  position: relative;
+
+  &:hover {
+    background-color: var(--input-bg-color-hover);
+  }
+
+  &:focus-within {
+    width: 16rem;
+    background-color: var(--input-bg-color-focus);
+    border: solid 2px var(--input-border-color);
+  }
+
+  input {
+    background-color: transparent;
+    width: 100%;
+    outline: none;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  .fe.fe-search {
+    position: absolute;
+    right: 10px;
+  }
+
+  .submenu-items {
+    visibility: hidden;
+    position: absolute;
+    top: 40px;
+    background: var(--submenu-bg-color);
+    border-radius: 5px;
+    z-index: 999;
+    width: 100%;
+    transform: scale(0.95);
+    opacity: 0.8;
+    transition: all 0.1s ease-in-out;
+
+    &.active {
+      visibility: visible;
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    .not-found {
+      user-select: none;
+      cursor: default;
+    }
+
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: var(--submenu-scroll-thumb-color);
+      border-radius: 30rem;
+      margin-right: 2px;
+    }
+  }
+}

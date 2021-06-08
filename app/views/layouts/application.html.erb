@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html class="dark">
+  <head>
+    <title>cryptowl - Preços, Gráficos e Capitalização de Criptomoedas</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header class="flex flex-col">
+      <div class="container mx-auto py-4 md:px-24">
+        <nav class="flex items-center justify-between">
+          <div class="flex items-center">
+            <a href="/"><%= image_tag "logo.svg" %></a>
+            <ul class="list-none flex items-center gap-6 ml-6">
+              <li class="transition ease-in-out"><a href="/coins">Criptomoedas</a></li>
+              <li class="transition ease-in-out"><a href="#">Exchanges</a></li>
+              <li class="transition ease-in-out"><a href="#">Sobre o projeto</a></li>
+            </ul>
+          </div>
+          <div class="flex items-center">
+            <div class="search-input rounded-md outline-none border-2 border-transparent mr-4">
+              <input id="search-input-text" autocomplete="off" class="pl-3 py-1 pr-8" type="text" placeholder="Pesquisar...">
+              <i class="fe fe-search text-lg text-black dark:text-white opacity-50"></i>
+
+              <div class="submenu-items max-h-96 overflow-y-auto">
+                <div class="submenu-container p-2">
+                  <ul id="submenu-items-list" class="flex flex-col list-none gap-2">
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <button id="toggle-theme-color" type="button" class="bg-white bg-opacity-0 focus:bg-opacity-20 hover:bg-opacity-10 rounded-md px-3 py-1">
+              <i class="fe fe-moon text-2xl text-black dark:text-white"></i>
+            </button>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <%= yield %>
+  </body>
+</html>

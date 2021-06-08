@@ -1,0 +1,37 @@
+// Place all the styles related to the Coin controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.price-change {
+  .triangle {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-radius: 2px;
+  }
+
+  &.down .triangle {
+    border-top: 5px solid white;
+  }
+
+  &.up .triangle {
+    border-bottom: 5px solid white;
+  }
+}
+
+.curr-button {
+  background: var(--main-button-bg-color);
+}
+
+.header-navbar {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 1px;
+
+  .selected {
+    background: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 3px 0 0 var(--main-button-bg-color);
+    color: white;
+  }
+}

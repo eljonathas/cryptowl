@@ -1,0 +1,57 @@
+<div class="container mx-auto mt-2 md:px-24">
+  <header class="mb-6">
+    <div class="mb-3">
+      <ul class="list-none flex items-center">
+        <li class="flex items-center text-sm text-white text-opacity-60 hover:text-opacity-100"><a href="/">Criptomoedas</a><i class="fe fe-arrow-right
+mx-3 text-white text-opacity-20"></i></li>
+        <li class="flex items-center text-sm text-white text-opacity-60 hover:text-opacity-100"><a href="/coins">Moedas</a><i class="fe fe-arrow-right
+mx-3 text-white text-opacity-20"></i></li>
+        <li id="curr-symbol" class="flex items-center text-sm text-white cursor-default"><span class="w-10 h-4 rounded-md animate-pulse bg-white bg-opacity-10"></span></li>
+      </ul>
+    </div>
+
+    <div id="curr-header" class="flex items-center justify-between">
+      <div class="flex items-center gap-5">
+        <span class="w-16 h-16 rounded-full animate-pulse bg-white bg-opacity-10"></span>
+      
+        <div class="flex flex-col items-start">
+          <span class="rounded-md w-96 h-8 animate-pulse bg-white bg-opacity-10 mb-2"></span>
+          <div class="flex items-center gap-2">
+            <span class="rounded-md w-20 h-6 animate-pulse bg-white bg-opacity-10"></span>
+            <span class="rounded-md w-20 h-6 animate-pulse bg-white bg-opacity-10"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex items-end flex-col gap-2">
+        <span class="rounded-md w-24 h-4 animate-pulse bg-white bg-opacity-10"></span>
+        <span class="rounded-md w-64 h-8 animate-pulse bg-white bg-opacity-10"></span>
+        <div class="flex items-center gap-2 mb-4">
+          <span class="rounded-md w-12 h-4 animate-pulse bg-white bg-opacity-10"></span>
+          <span class="rounded-md w-12 h-4 animate-pulse bg-white bg-opacity-10"></span>
+        </div>
+        <div class="flex items-center gap-4">
+          <span class="rounded-md w-24 h-12 animate-pulse bg-white bg-opacity-10"></span>
+          <span class="rounded-md w-24 h-12 animate-pulse bg-white bg-opacity-10"></span>
+          <span class="rounded-md w-24 h-12 animate-pulse bg-white bg-opacity-10"></span>
+          <span class="rounded-md w-24 h-12 animate-pulse bg-white bg-opacity-10"></span>
+        </div>
+      </div>
+    </div>
+
+    <nav id="header-nav" class="header-navbar mt-6">
+      <ul class="flex items-center">
+        <li class="py-2 px-4 selected" refer="default">Visão geral</li>
+        <li class="py-2 px-4" refer="news">Notícias</li>
+        <li class="py-2 px-4" refer="markets">Mercados</li>
+      </ul>
+    </nav>
+  </header>
+  <main class="mb-12">
+    <div class="flex items-center">
+      <div id="currency-content-display" class="flex flex-col gap-6" content="default">
+
+      </div>
+    </div>
+  </main>
+</div>
