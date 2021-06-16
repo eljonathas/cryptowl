@@ -12,8 +12,9 @@
  *
  *= require_tree .
  *= require_self
- *= require feathericon
  */
+
+@import "feathericon";
 
 :root {
   --main-bg-color: #f9f9f9;
