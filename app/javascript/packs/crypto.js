@@ -67,7 +67,7 @@ $(document).on("turbolinks:load", (e) => {
         const releaseDate = new Date(news.createdAt).getTime();
 
         contentHtml += `
-          <article class="bg-white bg-opacity-0 hover:bg-opacity-5 md:p-4 rounded-md transition ease">
+          <article class="bg-white bg-opacity-0 md:hover:bg-opacity-5 md:p-4 rounded-md transition ease">
             <a class="grid grid-cols-1 md:grid-cols-12 md:gap-4" href="${
               news.meta.sourceUrl
             }" target="_blank" rel="noopener noreferrer">
@@ -157,7 +157,7 @@ $(document).on("turbolinks:load", (e) => {
                 }</p>
               </div>
               <div class="flex items-center gap-3 h-12">
-                <a class="flex items-center curr-button px-6 h-full rounded-md cursor-pointer">Negocie agora</a>
+                <a href="https://www.binance.com/pt-BR" target="_blank" rel="noopener noreferrer" class="flex items-center curr-button px-6 h-full rounded-md cursor-pointer">Negocie agora</a>
                 <span id="wishlist-add-btn" class="flex items-center curr-button px-6 h-full rounded-md cursor-pointer"><i class="fe ${
                   verification.length ? "fe-heart" : "fe-heart-o"
                 } text-2xl"></i></span>
