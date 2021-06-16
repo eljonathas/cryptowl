@@ -17,7 +17,7 @@ $(document).on("turbolinks:load", () => {
       `);
     };
 
-    if (JSON.parse(getWishlist).length || 0) {
+    if (JSON.parse(getWishlist)?.length || 0) {
       let cardsHtml = "";
 
       const wishlistJson = JSON.parse(getWishlist);
@@ -68,7 +68,7 @@ $(document).on("turbolinks:load", () => {
 
       $el.parent().parent().remove();
 
-      if (!JSON.parse(localStorage.getItem("wishlist")).length) {
+      if (!JSON.parse(localStorage.getItem("wishlist"))?.length) {
         renderEmptyWishlist(wishlistContainer);
       }
     });
