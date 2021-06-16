@@ -28,10 +28,12 @@
   --input-border-color: rgba(0, 0, 0, 0.2);
   --main-button-bg-color: black;
   --coins-table-bg-color: rgba(0, 0, 0, 0.8);
+  --header-nav-selected-color: black;
 }
 
 html.dark {
   --main-bg-color: #26282b;
+  --main-secondary-bg-color: #3c4049;
   --navbar-text-color: rgba(255, 255, 255, 0.6);
   --navbar-text-color-hover: white;
   --image-filter: invert(0);
@@ -45,6 +47,7 @@ html.dark {
   --coins-table-bg-color: rgba(0, 0, 0, 0.1);
   --submenu-bg-color: #353941;
   --submenu-scroll-thumb-color: #454a54;
+  --header-nav-selected-color: white;
 }
 
 .search-input {
@@ -116,4 +119,21 @@ html.dark {
       margin-right: 2px;
     }
   }
+}
+
+#scroll-top-button {
+  background: var(--main-button-bg-color);
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.2s ease;
+
+  &.active {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.logo-image img {
+  height: 34px;
+  filter: var(--image-filter);
 }

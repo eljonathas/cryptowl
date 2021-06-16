@@ -1,10 +1,10 @@
-<div class="container mx-auto mt-2 md:px-24">
+<div class="container mx-auto mt-2 px-4 md:px-24">
   <header class="flex flex-col mb-6">
     <nav class="mb-3">
       <ul class="list-none flex items-center">
         <li class="flex items-center text-sm"><a href="/">Criptomoedas</a><i class="fe fe-arrow-right
-mx-3 text-white text-opacity-20"></i></li>
-        <li class="flex items-center text-sm text-white">Moedas</li>
+mx-3 text-black dark:text-white dark:text-opacity-20 text-opacity-20"></i></li>
+        <li class="flex items-center text-sm dark:text-white">Moedas</li>
       </ul>
     </nav>
     <div>
@@ -12,7 +12,7 @@ mx-3 text-white text-opacity-20"></i></li>
       <p class="dark:text-white text-black opacity-60 font-normal text-sm">Clique em uma criptomoeda para verificar suas informações individualmente</p>
     </div>
   </header>
-  <main class="coins-table mb-8">
+  <main class="coins-table mb-8 max-w-full overflow-x-auto">
     <table id="coins-table-content" class="mb-4">
       <thead>
         <tr>
@@ -41,7 +41,7 @@ mx-3 text-white text-opacity-20"></i></li>
       <tbody id="table-content" class="hidden"></tbody>
     </table>
     <div id="pagination_values" class="flex items-center justify-center">
-      <ul> 
+      <ul class="max-w-full"> 
         <li page-offset="0" class="active">1</li>
         <li page-offset="1">2</li>
         <li page-offset="2">3</li>

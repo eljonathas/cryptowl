@@ -1,0 +1,12 @@
+// Place all the styles related to the Wishlist controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.crypto-card {
+  background: var(--main-secondary-bg-color);
+  transition: all 0.2s;
+
+  &:hover {
+    filter: brightness(1.2);
+  }
+}

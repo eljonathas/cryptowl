@@ -12,22 +12,24 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.3.2/dist/chart.min.js"></script>
   </head>
 
-  <body>
+  <body class="flex flex-col">
     <header class="flex flex-col">
-      <div class="container mx-auto py-4 md:px-24">
+      <div class="container mx-auto py-4 px-4 md:px-24">
         <nav class="flex items-center justify-between">
           <div class="flex items-center">
-            <a href="/"><%= image_tag "logo.svg" %></a>
-            <ul class="list-none flex items-center gap-6 ml-6">
+            <a class="logo-image" href="/"><%= image_tag "logo.svg" %></a> 
+            <ul class="list-none items-center gap-6 ml-6 hidden md:flex">
               <li class="transition ease-in-out"><a href="/coins">Criptomoedas</a></li>
-              <li class="transition ease-in-out"><a href="#">Exchanges</a></li>
-              <li class="transition ease-in-out"><a href="#">Sobre o projeto</a></li>
+              <li class="transition ease-in-out"><a href="/about">Sobre</a></li>
+              <li class="transition ease-in-out"><a href="/wishlist">Lista de desejos</a></li>
             </ul>
           </div>
           <div class="flex items-center">
-            <div class="search-input rounded-md outline-none border-2 border-transparent mr-4">
+            <div class="search-input rounded-md outline-none border-2 border-transparent mr-4 hidden md:flex">
               <input id="search-input-text" autocomplete="off" class="pl-3 py-1 pr-8" type="text" placeholder="Pesquisar...">
               <i class="fe fe-search text-lg text-black dark:text-white opacity-50"></i>
 
@@ -38,6 +40,9 @@
                 </div>
               </div>
             </div>
+            <a href="/wishlist" class="bg-white bg-opacity-0 focus:bg-opacity-20 hover:bg-opacity-10 rounded-md px-3 py-1 visible md:hidden">
+              <i class="fe fe-heart-o text-2xl text-black dark:text-white"></i>
+            </a>
             <button id="toggle-theme-color" type="button" class="bg-white bg-opacity-0 focus:bg-opacity-20 hover:bg-opacity-10 rounded-md px-3 py-1">
               <i class="fe fe-moon text-2xl text-black dark:text-white"></i>
             </button>
@@ -46,5 +51,8 @@
       </div>
     </header>
     <%= yield %>
+    <div id="scroll-top-button" class="fixed w-12 h-12 rounded-full flex flex-col items-center justify-center cursor-pointer bottom-0 right-0 m-6 z-50">
+      <span><i class="fe fe-arrow-up text-3xl text-white"></i></span>
+    </div>
   </body>
 </html>

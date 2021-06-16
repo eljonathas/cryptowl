@@ -7,4 +7,24 @@ $.ajax({
   },
 });
 
-$(document).on("turbolinks:load", () => {});
+$(document).on("turbolinks:load", () => {
+  $(window).on("scroll", (e) => {
+    const $window = $(e.target);
+    const currentScrollPosition = $(window).scrollTop();
+    const toTopButton = $("#scroll-top-button");
+
+    if (currentScrollPosition >= 500) {
+      if (!toTopButton.hasClass("active")) {
+        toTopButton.addClass("active");
+      }
+    } else {
+      if (toTopButton.hasClass("active")) {
+        toTopButton.removeClass("active");
+      }
+    }
+  });
+
+  $("#scroll-top-button").on("click", () => {
+    $("html, body").animate({ scrollTop: 0 }, "fast");
+  });
+});

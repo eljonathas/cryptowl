@@ -23,6 +23,11 @@
 
 .curr-button {
   background: var(--main-button-bg-color);
+  transition: all 0.2s;
+
+  &:hover {
+    filter: brightness(1.1);
+  }
 }
 
 .header-navbar {
@@ -32,6 +37,12 @@
   .selected {
     background: rgba(0, 0, 0, 0.1);
     box-shadow: 0 3px 0 0 var(--main-button-bg-color);
-    color: white;
+    color: var(--header-nav-selected-color) !important;
+  }
+}
+
+#currency-content-column {
+  article {
+    background-color: var(--main-secondary-bg-color);
   }
 }

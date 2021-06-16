@@ -31,11 +31,6 @@ button {
 }
 
 header {
-  img {
-    height: 34px;
-    filter: var(--image-filter);
-  }
-
   nav {
     ul {
       li {
@@ -53,9 +48,8 @@ header {
 main {
   .main-illustration {
     img {
-      height: 36rem;
+      height: 24rem;
       margin: 0 auto;
-      filter: var(--main-illustration-filter);
     }
   }
 
@@ -71,5 +65,14 @@ main {
     height: 35rem;
     width: 36rem;
     object-fit: cover;
+  }
+}
+
+@media (min-width: 768px) {
+  .main-illustration {
+    img {
+      height: 36rem !important;
+      margin: 0 auto;
+    }
   }
 }

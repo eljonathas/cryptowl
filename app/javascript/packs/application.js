@@ -13,6 +13,7 @@ import "./main";
 import "./coins";
 import "./navbar";
 import "./crypto";
+import "./wishlist";
 
 Rails.start();
 Turbolinks.start();
