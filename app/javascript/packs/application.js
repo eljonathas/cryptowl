@@ -8,7 +8,7 @@ import Turbolinks from "turbolinks";
 import * as ActiveStorage from "@rails/activestorage";
 import "channels";
 
-import "stylesheets/application.scss";
+import "stylesheets/application.css";
 import "./main";
 import "./coins";
 import "./navbar";
