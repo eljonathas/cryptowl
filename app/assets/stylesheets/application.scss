@@ -17,6 +17,7 @@
 
 :root {
   --main-bg-color: #f9f9f9;
+  --main-secondary-bg-color: rgba(0, 0, 0, 0.05);
   --navbar-text-color: rgba(0, 0, 0, 0.5);
   --navbar-text-color-hover: black;
   --image-filter: invert(1);
@@ -29,6 +30,8 @@
   --main-button-bg-color: black;
   --coins-table-bg-color: rgba(0, 0, 0, 0.8);
   --header-nav-selected-color: black;
+  --submenu-bg-color: rgb(41, 41, 41);
+  --submenu-scroll-thumb-color: rgba(255, 255, 255, 0.2);
 }
 
 html.dark {

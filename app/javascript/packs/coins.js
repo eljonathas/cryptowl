@@ -13,6 +13,9 @@ $(document).on("turbolinks:load", () => {
     minimumFractionDigits: 2,
   });
 
+  /**
+   * @function getCryptoData() retorna uma promise que faz a captura dos dados na API para renderizar na tela
+   */
   function getCryptoData() {
     return new Promise((resolve, reject) => {
       $.ajax({
@@ -69,6 +72,9 @@ $(document).on("turbolinks:load", () => {
     });
   }
 
+  /**
+   * A função @function loadCoinsSocket() faz a conexão com o WebSocket fornecido pela API para renderizar as informações em tela
+   */
   function loadCoinsSocket() {
     const coinsSocket = new WebSocket("wss://ws.coincap.io/prices?assets=ALL");
 
