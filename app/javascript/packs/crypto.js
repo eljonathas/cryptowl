@@ -67,7 +67,7 @@ $(document).on("turbolinks:load", (e) => {
         const releaseDate = new Date(news.createdAt).getTime();
 
         contentHtml += `
-          <article class="bg-white bg-opacity-0 md:hover:bg-opacity-5 md:p-4 rounded-md transition ease">
+          <article class="bg-black dark:bg-white bg-opacity-0 dark:bg-opacity-0 md:hover:bg-opacity-5 md:p-4 rounded-md transition ease">
             <a class="grid grid-cols-1 md:grid-cols-12 md:gap-4" href="${
               news.meta.sourceUrl
             }" target="_blank" rel="noopener noreferrer">
@@ -80,20 +80,20 @@ $(document).on("turbolinks:load", (e) => {
               </div>
 
               <div class="col-span-9 flex flex-col gap-1">
-                <h1 class="text-lg font-semibold">${
+                <h1 class="text-lg font-semibold text-black dark:text-white">${
                   news.meta.title
-                } <i class="fe fe-link-external text-white text-opacity-40 ml-2"></i></h1>
-                <p class="text-base text-white text-opacity-60">${
+                } <i class="fe fe-link-external text-black dark:text-white text-opacity-40 dark:text-opacity-40 ml-2"></i></h1>
+                <p class="text-base text-black dark:text-white text-opacity-60 dark:text-opacity-60">${
                   news.meta.subtitle
                 }</p>
                 <div class="flex items-center justify-center md:justify-start gap-6 flex-1 mt-4 md:mt-0">
-                  <span class="text-white text-opacity-60 text-sm">${
+                  <span class="text-black dark:text-white text-opacity-60 dark:text-opacity-60 text-sm">${
                     news.meta.sourceName
                   }</span>
-                  <span class="text-white text-opacity-60 text-sm">${timeSince(
+                  <span class="text-black dark:text-white text-opacity-60 dark:text-opacity-60 text-sm">${timeSince(
                     releaseDate
                   )} atrás</span>
-                  <span class="flex items-center text-sm text-white text-opacity-60 bg-white bg-opacity-5 px-2 py-1 rounded-full gap-1">
+                  <span class="flex items-center text-sm text-black dark:text-white text-opacity-60 dark:text-opacity-60 bg-black dark:bg-white bg-opacity-5 dark:bg-opacity-5 px-2 py-1 rounded-full gap-1">
                     <img src="${
                       news.assets[0]?.logo
                         ? news.assets[0]?.logo
@@ -102,7 +102,7 @@ $(document).on("turbolinks:load", (e) => {
           news.assets[0]?.name
         }" onerror="this.style.display='none'">
 
-                    ${news.assets[0]?.name}
+                    ${news.assets[0]?.name ? news.assets[0]?.name : "Crypto"}
                   </span>
                 </div>
               </div>
@@ -147,12 +147,12 @@ $(document).on("turbolinks:load", (e) => {
         }" onerror="this.style.display='none'">
           
             <div class="flex flex-col items-start">
-              <h2 class="text-3xl font-semibold mb-2">${data.name.toUpperCase()}/DÓLAR AMERICANO</h2>
+              <h2 class="text-3xl font-semibold mb-2 text-black dark:text-white">${data.name.toUpperCase()}/DÓLAR AMERICANO</h2>
               <div class="flex items-center gap-2 mb-8">
-                <p class="px-2 py-1 rounded-md bg-white bg-opacity-5 text-white text-opacity-60 text-sm">${
+                <p class="px-2 py-1 rounded-md bg-black bg-opacity-5 dark:bg-white dark:bg-opacity-5 text-black text-opacity-60 dark:text-white dark:text-opacity-60 text-sm">${
                   data.symbol
                 }/USD</p>
-                <p class="px-2 py-1 rounded-md bg-white bg-opacity-5 text-white text-opacity-60 text-sm">Classificação #${
+                <p class="px-2 py-1 rounded-md bg-black bg-opacity-5 dark:bg-white dark:bg-opacity-5 text-black text-opacity-60 dark:text-white dark:text-opacity-60 text-sm">Classificação #${
                   data.rank
                 }</p>
               </div>
@@ -166,10 +166,10 @@ $(document).on("turbolinks:load", (e) => {
           </div>
 
           <div class="flex items-start md:items-end flex-col w-full md:w-auto">
-            <p class="text-xs mb-2 opacity-60">Preço de ${data.name} (${
-          data.symbol
-        })</p>
-            <h1 id="price-value" class="text-4xl font-bold mb-2">${formatter.format(
+            <p class="text-xs mb-2 text-black dark:text-white opacity-60">Preço de ${
+              data.name
+            } (${data.symbol})</p>
+            <h1 id="price-value" class="text-4xl text-black dark:text-white font-bold mb-2">${formatter.format(
               data.priceUsd
             )}</h1>
             <div class="flex items-center gap-4 mb-4">
@@ -182,31 +182,31 @@ $(document).on("turbolinks:load", (e) => {
             </div>
             <div class="flex flex-col md:flex-row items-start gap-8">
               <div class="flex flex-col items-start">
-                <h1 class="text-semibold text-lg">${numberFormatter(
+                <h1 class="text-black dark:text-white text-semibold text-lg">${numberFormatter(
                   parseInt(data.marketCapUsd)
                 )}</h1>
-                <p class="text-white text-opacity-60 text-sm">CAP. DE MERCADO</p>
+                <p class="text-black text-opacity-60 dark:text-white dark:text-opacity-60 text-sm">CAP. DE MERCADO</p>
               </div>
 
               <div class="flex flex-col items-start">
-                <h1 class="text-semibold text-lg">${numberFormatter(
+                <h1 class="text-black dark:text-white text-semibold text-lg">${numberFormatter(
                   parseInt(data.volumeUsd24Hr)
                 )}</h1>
-                <p class="text-white text-opacity-60 text-sm">VOLUME 24H</p>
+                <p class="text-black text-opacity-60 dark:text-white dark:text-opacity-60 text-sm">VOLUME 24H</p>
               </div>
 
               <div class="flex flex-col items-start">
-                <h1 class="text-semibold text-lg">${numberFormatter(
+                <h1 class="text-black dark:text-white text-semibold text-lg">${numberFormatter(
                   parseInt(data.supply)
                 )}</h1>
-                <p class="text-white text-opacity-60 text-sm">FORNECIMENTO</p>
+                <p class="text-black text-opacity-60 dark:text-white dark:text-opacity-60 text-sm">FORNECIMENTO</p>
               </div>
 
               <div class="flex flex-col items-start">
-                <h1 class="text-semibold text-lg">${numberFormatter(
+                <h1 class="text-black dark:text-white text-semibold text-lg">${numberFormatter(
                   parseInt(data.vwap24Hr)
                 )}</h1>
-                <p class="text-white text-opacity-60 text-sm">VWAP 24H</p>
+                <p class="text-black text-opacity-60 dark:text-white dark:text-opacity-60 text-sm">VWAP 24H</p>
               </div>
             </div>
           </div>
@@ -232,15 +232,15 @@ $(document).on("turbolinks:load", (e) => {
 
         // load conversor content
         $("#currency-conversor").html(`
-          <h1 class="mb-2 text-white text-opacity-40 font-semibold">Conversor de valores</h1>
+          <h1 class="mb-2 text-black text-opacity-50 dark:text-white dark:text-opacity-40 font-semibold">Conversor de valores</h1>
           <article class="flex flex-col gap-2 p-1 rounded-lg">
             <div class="bg-black bg-opacity-20 p-3 flex items-center justify-between rounded-md">
               <div class="flex items-center gap-3">
                 <img src="https://cryptologos.cc/logos/thumbs/${data.id}.png?v=010" class="object-contain w-6 h-6" alt="${data.name}" onerror="this.style.display='none'">
 
                 <div class="flex flex-col">
-                  <p class="text-xs text-white text-opacity-40">${data.symbol}</p>
-                  <h1>${data.name}</h1>
+                  <p class="text-xs text-black text-opacity-50 dark:text-white dark:text-opacity-40">${data.symbol}</p>
+                  <h1 class="text-black dark:text-white">${data.name}</h1>
                 </div>
               </div>
 
@@ -251,12 +251,12 @@ $(document).on("turbolinks:load", (e) => {
                 <img src="/images/usd_logo.png" class="object-contain w-6 h-6" alt="USD" onerror="this.style.display='none'">
 
                 <div class="flex flex-col">
-                  <p class="text-xs text-white text-opacity-40">USD</p>
-                  <h1>United States Dolar</h1>
+                  <p class="text-xs text-black text-opacity-50 dark:text-white dark:text-opacity-40">USD</p>
+                  <h1 class="text-black dark:text-white">United States Dolar</h1>
                 </div>
               </div>
 
-              <input refer="usd" type="text" class="input-currency bg-transparent text-white text-right ml-4 flex-1 outline-none font-semibold text-lg truncate" placeholder="0" />
+              <input refer="usd" type="text" class="input-currency bg-transparent text-black dark:text-white text-right ml-4 flex-1 outline-none font-semibold text-lg truncate" placeholder="0" />
             </div>
           </article>
         `);
@@ -333,13 +333,13 @@ $(document).on("turbolinks:load", (e) => {
           <div class="flex flex-col relative">
             <div id="crypto-chart-loader" class="flex flex-col items-center gap-1 w-full h-full justify-center rounded-md bg-black bg-opacity-20 absolute z-50">
               <div class="flex items-center">
-                <svg class="animate-spin mr-2 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <svg class="animate-spin mr-2 h-5 w-5 text-black dark:text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                   <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                   <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                 </svg>
-                <h1>Carregando dados...</h1>
+                <h1 class="text-black dark:text-white">Carregando dados...</h1>
               </div>
-              <p class="text-white opacity-60 text-center">Aguarde enquanto as informações <br/> são inseridas no gráfico.</p>
+              <p class="text-black dark:text-white opacity-60 text-center">Aguarde enquanto as informações <br/> são inseridas no gráfico.</p>
             </div>
 
             <canvas id="crypto-chart" refer="${param}" width="600" height="400"></canvas>
@@ -401,8 +401,8 @@ $(document).on("turbolinks:load", (e) => {
           newsArr.forEach((news) => {
             contentHtml += `
               <article class="w-full rounded-md">
-                <a href="${news.meta.sourceUrl}" class="flex p-4" target="_blank" rel="noopener noreferrer">
-                  <h1>${news.meta.title} <i class="fe fe-link-external text-white text-opacity-40 ml-2"></i></h1>
+                <a href="${news.meta.sourceUrl}" class="flex p-4 text-black dark:text-white" target="_blank" rel="noopener noreferrer">
+                  <h1>${news.meta.title} <i class="fe fe-link-external ml-2 text-black text-opacity-50 dark:text-white dark:text-opacity-40"></i></h1>
                 </a>
               </article>
             `;
@@ -411,7 +411,7 @@ $(document).on("turbolinks:load", (e) => {
           // now, load the right bar content
           $("#dynamic-content-column").html(`
             <section class="flex flex-col gap-1">
-              <h1 class="mb-2 text-white text-opacity-40 font-semibold">Notícias recentes</h1>
+              <h1 class="mb-2 text-black text-opacity-50 dark:text-white dark:text-opacity-40 font-semibold">Notícias recentes</h1>
               <div class="flex flex-col gap-2">
                 ${contentHtml}
               </div>
